@@ -4,7 +4,7 @@ import OurExpertise from '@/components/OurExpertiseSection/OurExpertiseSection';
 import { Header } from '@/components/Header/Header';
 import HeroVideo from '@/components/HeroVideo/HeroVideo';
 import OurWorksSection from '@/components/OurWorksSection/OurWorksSection';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import FeedBackSection from '@/components/FeedBackSection/FeedBackSection';
 
 export default function Home() {

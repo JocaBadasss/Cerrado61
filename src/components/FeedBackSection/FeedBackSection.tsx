@@ -1,17 +1,18 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import FeedBackCard from './components/FeedBackCard';
-import { useState } from 'react';
 
 interface FeedBackSectionProps {
   id?: string;
 }
 
 export default function FeedBackSection({ id }: FeedBackSectionProps) {
-  const [activeImage, setActiveImage] = useState<string | StaticImageData>(
-    '/work2.jpg'
-  );
+  // const [activeImage, setActiveImage] = useState<string | StaticImageData>(
+  //   '/work2.jpg'
+  // );
+
+  // setActiveImage('/work2.jpg');
 
   const name = 'JocaBadass';
   const paragraph =
@@ -52,7 +53,7 @@ export default function FeedBackSection({ id }: FeedBackSectionProps) {
         {/* Imagem do trabalho */}
         <div className='w-[32rem] grid gap-4'>
           <Image
-            src={activeImage}
+            src={'/work2.jpg'}
             alt='Imagem do trabalho'
             width={500} // Define a largura
             height={300} // Define uma altura fixa
