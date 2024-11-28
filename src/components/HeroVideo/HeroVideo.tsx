@@ -86,6 +86,15 @@ export default function HeroVideo({ id }: HeroVideoProps) {
         >
           Fala com a gente!
         </button>
+
+        //         <button
+        //   className={`absolute bottom-[10%] left-[5%] text-gray-950 bg-gray-200 py-2 px-4 rounded-3xl shadow-lg font-semibold border-[1px] border-white  transition-opacity   font-robotoMono ${
+        //     hasAppeared ? 'animate-slide-up-fade' : ''
+        //   } ${isVibrating ? 'animate-vibrate' : ''}`}
+        //   onAnimationEnd={() => setHasAppeared(false)}
+        // >
+        //   VAMOS CONVERSAR
+        // </button>
       )}
     </section>
   );

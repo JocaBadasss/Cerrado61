@@ -5,6 +5,7 @@ import { Header } from '@/components/Header/Header';
 import HeroVideo from '@/components/HeroVideo/HeroVideo';
 import OurWorksSection from '@/components/OurWorksSection/OurWorksSection';
 import { useEffect, useState } from 'react';
+import FeedBackSection from '@/components/FeedBackSection/FeedBackSection';
 
 export default function Home() {
   useEffect(() => {
@@ -42,10 +43,11 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className='w-full px-8 p- flex gap-16 flex-col'>
+      <main className='w-full px-8 p- flex gap-16 flex-col mb-7'>
         <HeroVideo id='hero-video' />
         <OurExpertise id='our-expertise' />
         <OurWorksSection id='our-works' />
+        <FeedBackSection id='feedbacks' />
       </main>
     </>
   );

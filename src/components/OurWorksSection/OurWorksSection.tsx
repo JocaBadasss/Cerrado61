@@ -24,7 +24,7 @@ export default function OurWorksSection({ id }: OurWorksProps) {
           <h1 className='text-sm text-left'>
             <span className='block mb-1'> &#40;02&#41; </span> Nossos Trabalhos
           </h1>
-          <p className='text-3xl text-left w-[480px] font-poppins'>
+          <p className='text-3xl text-left w-[30rem] font-poppins'>
             Projetos que inspiram e resultados que falam por si. Conheça nosso
             portfólio e veja como transformamos ideias em realidade.
           </p>

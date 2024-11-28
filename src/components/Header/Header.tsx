@@ -66,7 +66,7 @@ export const Header = () => {
             <a href='#hero-video'>Home</a>
           </li>
           <li
-            className={`flex items-center relative before:content-[''] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-whit `}
+            className={`flex items-center relative before:content-[''] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white `}
           >
             <a href='#our-expertise'>Serviços</a>
           </li>

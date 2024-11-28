@@ -50,7 +50,7 @@ export default function OurExpertiseSection({ id }: OurExpertiseProps) {
             <span className='block mb-1 text-zinc-400'> &#40;01&#41; </span>{' '}
             Nossa Expertise
           </h1>
-          <p className='text-3xl text-left w-[480px] text-zinc-400'>
+          <p className='text-3xl text-left w-[30rem] text-zinc-400'>
             <span className='font-bold text-white'>Criatividade</span> que
             transforma.
             <span className='font-bold text-white'> Histórias</span> que
