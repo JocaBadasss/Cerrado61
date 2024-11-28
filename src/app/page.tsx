@@ -1,25 +1,51 @@
-import { Header } from '@/components/Header';
+'use client';
+
+import OurExpertise from '@/components/OurExpertiseSection/OurExpertiseSection';
+import { Header } from '@/components/Header/Header';
+import HeroVideo from '@/components/HeroVideo/HeroVideo';
+import OurWorksSection from '@/components/OurWorksSection/OurWorksSection';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    const links = document.querySelectorAll('a[href^="#"]');
+    const headerHeight = 110; // Ajuste para a altura do seu header quando fixado
+
+    const smoothScroll = (event: Event) => {
+      event.preventDefault();
+      const targetId = (event.currentTarget as HTMLAnchorElement).getAttribute(
+        'href'
+      );
+      if (targetId) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offsetPosition =
+            targetElement.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }
+      }
+    };
+
+    links.forEach((link) => link.addEventListener('click', smoothScroll));
+
+    return () => {
+      links.forEach((link) => link.removeEventListener('click', smoothScroll));
+    };
+  }, []);
+
   return (
     <>
       <Header />
-      <main className='w-full '>
-        <div className='relative h-screen overflow-hidden'>
-          <video
-            autoPlay
-            loop
-            muted
-            className='absolute top-0 left-0 w-full h-screen object-cover'
-          >
-            <source
-              src='/video.mp4'
-              type='video/mp4'
-            />
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-        </div>
-        <div>Olá</div>
+      <main className='w-full px-8 p- flex gap-16 flex-col'>
+        <HeroVideo id='hero-video' />
+        <OurExpertise id='our-expertise' />
+        <OurWorksSection id='our-works' />
       </main>
     </>
   );
