@@ -12,9 +12,9 @@ const config: Config = {
         Heading: ['cy', 'sans-serif'],
         Numbers: ['minion-pro', 'serif'],
         Texting: ['myriad-pro', 'serif'],
-        poppins: ['var(--font-poppins)', 'sans-serif'],
-        robotoMono: ['var(--font-roboto-mono)', 'monospace'],
-        roboto: ['var(--font-roboto)', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'], // Alterado para o nome da fonte do Google Fonts
+        robotoMono: ['Roboto Mono', 'monospace'], // Alterado para o nome da fonte do Google Fonts
+        roboto: ['Roboto', 'sans-serif'], // Alterado para o nome da fonte do Google Fonts
       },
       colors: {
         Cerrado_100: '#F0672D',
