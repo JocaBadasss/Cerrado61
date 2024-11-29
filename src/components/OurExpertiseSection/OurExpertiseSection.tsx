@@ -16,13 +16,12 @@ export default function OurExpertiseSection({ id }: OurExpertiseProps) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Ativa os cards com delay em sequência
             isVisible.forEach((_, index) => {
               setTimeout(() => {
                 setIsVisible((prev) =>
                   prev.map((val, i) => (i === index ? true : val))
                 );
-              }, index * 300); // Atraso de 300ms entre cada card
+              }, index * 300); 
             });
           }
         });

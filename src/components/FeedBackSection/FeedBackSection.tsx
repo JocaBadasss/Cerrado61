@@ -21,24 +21,26 @@ export default function FeedBackSection({ id }: FeedBackSectionProps) {
   return (
     <section
       id={id}
-      className='flex flex-col gap-11 font-poppins pt-9'
+      className='flex flex-col gap-11 font-poppins pt-9 justify-center'
     >
       <div className='.wrapper flex w-full justify-between'>
         <div className='.text-wrapper flex flex-col gap-8 '>
           <h1 className='text-sm text-left font-robotoMono'>
             <span className='block mb-1 text-zinc-400'> &#40;03&#41; </span>{' '}
-            Feedbacks
+            O que falam de nós
           </h1>
+
+          <p className='text-3xl text-left w-[36rem] text-zinc-400'>
+            <span className='font-bold text-white'>Feedbacks</span> que
+            impulsionam.
+            <span className='font-bold text-white'> Conexões</span> que
+            fortalecem. Da <span className='font-bold text-white'>escuta</span>{' '}
+            atenta à <span className='font-bold text-white'>ação</span>{' '}
+            transformadora, cada palavra é um{' '}
+            <span className='font-bold text-white'>passo</span> para a
+            excelência.
+          </p>
         </div>
-        <p className='text-3xl text-left w-[36rem] text-zinc-400'>
-          <span className='font-bold text-white'>Feedbacks</span> que
-          impulsionam.
-          <span className='font-bold text-white'> Conexões</span> que
-          fortalecem. Da <span className='font-bold text-white'>escuta</span>{' '}
-          atenta à <span className='font-bold text-white'>ação</span>{' '}
-          transformadora, cada palavra é um{' '}
-          <span className='font-bold text-white'>passo</span> para a excelência.
-        </p>
       </div>
 
       {/* Flex  */}

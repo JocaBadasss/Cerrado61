@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowUpRight } from '@phosphor-icons/react';
 import { useEffect, useRef, useState } from 'react';
 
 interface HeroVideoProps {
@@ -78,23 +79,33 @@ export default function HeroVideo({ id }: HeroVideoProps) {
       <div className='absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-2xl'></div>
 
       {showButton && (
-        <button
-          className={`absolute bottom-[10%] left-[5%] bg-zinc-500 bg-opacity-50 text-white py-2 px-4 rounded-3xl shadow-lg font-semibold border-[1px] border-white  transition-opacity  text-[12px] ${
-            hasAppeared ? 'animate-slide-up-fade' : ''
-          } ${isVibrating ? 'animate-vibrate' : ''}`}
-          onAnimationEnd={() => setHasAppeared(false)}
-        >
-          Fala com a gente!
-        </button>
-
-        //         <button
-        //   className={`absolute bottom-[10%] left-[5%] text-gray-950 bg-gray-200 py-2 px-4 rounded-3xl shadow-lg font-semibold border-[1px] border-white  transition-opacity   font-robotoMono ${
+        // <button
+        //   className={`absolute bottom-[10%] left-[5%] bg-zinc-500 bg-opacity-50 text-white py-2 px-4 rounded-3xl shadow-lg font-semibold border-[1px] border-white  transition-opacity  text-[12px] ${
         //     hasAppeared ? 'animate-slide-up-fade' : ''
         //   } ${isVibrating ? 'animate-vibrate' : ''}`}
         //   onAnimationEnd={() => setHasAppeared(false)}
         // >
-        //   VAMOS CONVERSAR
+        //   Fala com a gente!
         // </button>
+
+        <div
+          className={`absolute bottom-[10%] left-[5%] flex items-center transition-opacity ${
+            hasAppeared ? 'animate-slide-up-fade' : ''
+          } ${isVibrating ? 'animate-vibrate' : ''}`}
+          onAnimationEnd={() => setHasAppeared(false)}
+        >
+          <button
+            className={` text-gray-950 bg-gray-200 py-2 px-4 rounded-3xl shadow-lg font-semibold border-[1px] border-white     font-robotoMono `}
+          >
+            VAMOS CONVERSAR{' '}
+          </button>
+          <button className='bg-gray-200 rounded-full p-[0.5625rem] ml-[-3px]'>
+            <ArrowUpRight
+              size={24}
+              className='text-gray-950'
+            />{' '}
+          </button>
+        </div>
       )}
     </section>
   );
