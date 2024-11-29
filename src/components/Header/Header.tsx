@@ -3,7 +3,7 @@
 import { InstagramLogo, WhatsappLogo } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 
-export const Header = () => {
+export default function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
 
   const handleScroll = () => {
@@ -60,9 +60,7 @@ export const Header = () => {
         className={`text-white transition-all duration-1000  rounded-3xl relative  `}
       >
         <ul className='flex flex-row gap-7 text-sm relative p-3 font-poppins'>
-          <li
-            className={`flex items-center `}
-          >
+          <li className={`flex items-center `}>
             <a href='#hero-video'>Home</a>
           </li>
           <li
@@ -104,4 +102,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
+}

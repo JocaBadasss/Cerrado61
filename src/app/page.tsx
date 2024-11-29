@@ -1,7 +1,7 @@
 'use client';
 
 import OurExpertise from '@/components/OurExpertiseSection/OurExpertiseSection';
-import { Header } from '@/components/Header/Header';
+import Header from '@/components/Header/Header';
 import HeroVideo from '@/components/HeroVideo/HeroVideo';
 import OurWorksSection from '@/components/OurWorksSection/OurWorksSection';
 import { useEffect } from 'react';
