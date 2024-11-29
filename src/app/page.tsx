@@ -1,11 +1,11 @@
 'use client';
 
-import OurExpertise from '@/components/OurExpertiseSection/OurExpertiseSection';
-import Header from '@/components/Header/Header';
-import HeroVideo from '@/components/HeroVideo/HeroVideo';
-import OurWorksSection from '@/components/OurWorksSection/OurWorksSection';
+import OurExpertise from '../components/OurExpertiseSection/OurExpertiseSection';
+import Header from '../components/Header/Header';
+import HeroVideo from '../components/HeroVideo/HeroVideo';
+import OurWorksSection from '../components/OurWorksSection/OurWorksSection';
 import { useEffect } from 'react';
-import FeedBackSection from '@/components/FeedBackSection/FeedBackSection';
+import FeedBackSection from '../components/FeedBackSection/FeedBackSection';
 
 export default function Home() {
   useEffect(() => {

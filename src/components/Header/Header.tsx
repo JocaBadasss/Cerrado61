@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 export default function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
 
-  const handleScroll = () => {
+const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsScrolling(true);
     } else {
