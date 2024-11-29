@@ -2,7 +2,7 @@
 import { CaretRight } from '@phosphor-icons/react';
 import { useState, useEffect } from 'react';
 
-import Tag from '@/components/Tag/Tag';
+import Tag from '../../../Tag/Tag';
 
 interface CardProps {
   active: boolean;
