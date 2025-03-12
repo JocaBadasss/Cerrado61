@@ -1,7 +1,7 @@
 'use client';
 
-import { ArrowUpRight } from '@phosphor-icons/react';
 import { useEffect, useRef, useState } from 'react';
+import { GoArrowUpRight } from "react-icons/go";
 
 interface HeroVideoProps {
   id?: string;
@@ -100,7 +100,7 @@ export default function HeroVideo({ id }: HeroVideoProps) {
             VAMOS CONVERSAR{' '}
           </button>
           <button className='bg-gray-200 rounded-full p-[0.5625rem] ml-[-3px]'>
-            <ArrowUpRight
+            <GoArrowUpRight
               size={24}
               className='text-gray-950'
             />{' '}

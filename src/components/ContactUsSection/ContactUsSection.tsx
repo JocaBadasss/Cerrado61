@@ -13,7 +13,7 @@ export default function ContactUsSection({ id }: ContactUsSectionProps) {
       <div className='wrapper flex w-full justify-between'>
         <div className='text-wrapper flex flex-col gap-8'>
           <h1 className='text-sm text-left font-robotoMono'>
-            <span className='block mb-1 '> &#40;04&#41; </span> Nos contate
+            <span className='block mb-1 '> &#40;03&#41; </span> Nos contate
           </h1>
           <div className='text-5xl text-left w-4/6  text-zinc-400'>
             <p className='inline'>

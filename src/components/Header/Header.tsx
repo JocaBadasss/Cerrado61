@@ -1,12 +1,12 @@
 'use client';
 
-import { InstagramLogo, WhatsappLogo } from '@phosphor-icons/react';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 
 export default function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
 
-const handleScroll = () => {
+  const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsScrolling(true);
     } else {
@@ -75,7 +75,7 @@ const handleScroll = () => {
           </li>
 
           <li className="flex items-center relative before:content-[''] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white">
-            <a href='#'>Contato</a>
+            <a href='#contact-us'>Contato</a>
           </li>
           {/* <li className='bg-orange-600 bg-opacity-50 h-fit absolute right-0 l top-0 rounded-r-3xl p-3 '>
             <a href='#'>Contato</a>
@@ -85,16 +85,20 @@ const handleScroll = () => {
 
       <div className='flex flex-row gap-5  items-center justify-end w-[13.375rem]'>
         <a
-          href='#
+          href='https://www.instagram.com/cerrado61produtora/
         '
+          target='_blank'
         >
-          <InstagramLogo
+          <FaInstagram
             size={22}
             color='white'
           />
         </a>
-        <a href='#'>
-          <WhatsappLogo
+        <a
+          href='https://whatsa.me/5561999380906/?t=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o.'
+          target='_blank'
+        >
+          <FaWhatsapp
             size={22}
             color='white'
           />

@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react';
+import { GoArrowRight, GoArrowUpRight } from 'react-icons/go';
 import Image from 'next/image';
 
 export interface FeedBackCardProps {
@@ -33,12 +33,12 @@ export default function FeedBackCard({ IsActive }: FeedBackCardProps) {
         } rounded-full p-2 `}
       >
         {IsActive ? (
-          <ArrowUpRight
+          <GoArrowUpRight
             size={24}
             className='text-zinc-800'
           />
         ) : (
-          <ArrowRight size={24} />
+          <GoArrowRight size={24} />
         )}
       </button>
     </article>

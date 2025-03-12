@@ -1,5 +1,5 @@
 'use client';
-import { CaretRight } from '@phosphor-icons/react';
+import { PiCaretRightBold } from 'react-icons/pi';
 import { useState, useEffect } from 'react';
 
 import Tag from '../../../Tag/Tag';
@@ -88,9 +88,9 @@ export default function Card({
           }`}
         >
           MAIS DETALHES{' '}
-          <CaretRight
+          <PiCaretRightBold
             size={24}
-            weight='bold'
+            // weight='bold'
           />
         </button>
       </div>
