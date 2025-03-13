@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Card from './components/CardsWorkSection/CardsWorkSection';
 
 interface OurWorksProps {
@@ -9,6 +9,32 @@ interface OurWorksProps {
 
 export default function OurWorksSection({ id }: OurWorksProps) {
   const [activeCard, setActiveCard] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true); // Evita que a animação aconteça mais de uma vez
+
+            // Sequência automática dos cards
+            setTimeout(() => setActiveCard(2), 800); // Primeiro ativa o card 2
+            setTimeout(() => setActiveCard(3), 1600); // Depois ativa o card 3
+            setTimeout(() => setActiveCard(1), 2400); // Volta para o card 1 e usuário assume o controle
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
 
   const handleMouseEnter = (index: number) => {
     setActiveCard(index);
@@ -16,6 +42,7 @@ export default function OurWorksSection({ id }: OurWorksProps) {
 
   return (
     <section
+      ref={sectionRef}
       className='flex flex-col gap-11 font-robotoMono bg-zinc-800 rounded-3xl p-9'
       id={id}
     >
@@ -55,7 +82,7 @@ export default function OurWorksSection({ id }: OurWorksProps) {
           positionBackground='center'
           tags={['Acompanhamento', 'Fotografias', 'Filmagem', 'Qualidade 4K']}
           title='Cobertura de Eventos'
-          subtitle='Transformamos momentos em imagens que contam historias.'
+          subtitle='Transformamos momentos em imagens que contam histórias.'
         />
 
         {/* Ensaios fotográficos */}

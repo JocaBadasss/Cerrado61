@@ -57,7 +57,7 @@ export default function RootLayout({
           href='https://use.typekit.net/tcg6klc.css'
         ></link>
       </head>
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased `}>{children}</body>
     </html>
   );
 }

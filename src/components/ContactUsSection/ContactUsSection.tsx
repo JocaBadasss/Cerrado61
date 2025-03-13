@@ -26,8 +26,28 @@ export default function ContactUsSection({ id }: ContactUsSectionProps) {
           </div>
         </div>
         <p className='text-sm text-right text-zinc-500 w-[20rem] self-end font-robotoMono'>
-          Rua X, 123, Centro, <br /> Cidade Y - Estado Z <br /> (61) 99999-9999{' '}
-          <br /> contato@cerrado61.com
+          <a
+            href='https://maps.app.goo.gl/NhJmVswWLTgsLzPA8'
+            className='hover:text-white'
+            target='_blank'
+          >
+            CLSW 103 Bloco A sala 127,
+            <br /> Brasília, DF, 70670-521 <br />
+          </a>{' '}
+          <a
+            href='https://whatsa.me/5561999380906/?t=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o.'
+            className='hover:text-white'
+            target='_blank'
+          >
+            (61) 99938-0906 <br />{' '}
+          </a>{' '}
+          <a
+            href='mailto:contato@cerrado61.com'
+            target='_blank'
+            className='hover:text-white'
+          >
+            contato@cerrado61.com
+          </a>
         </p>
       </div>
       <hr className='border-t border-zinc-400 ' />

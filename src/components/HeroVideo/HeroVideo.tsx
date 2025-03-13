@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { GoArrowUpRight } from "react-icons/go";
+import { GoArrowUpRight } from 'react-icons/go';
+import LetsTalkButton from '../LetsTalkButton/LetsTalkButton';
 
 interface HeroVideoProps {
   id?: string;
@@ -94,17 +95,7 @@ export default function HeroVideo({ id }: HeroVideoProps) {
           } ${isVibrating ? 'animate-vibrate' : ''}`}
           onAnimationEnd={() => setHasAppeared(false)}
         >
-          <button
-            className={` text-gray-950 bg-gray-200 py-2 px-4 rounded-3xl shadow-lg font-semibold border-[1px] border-white     font-robotoMono `}
-          >
-            VAMOS CONVERSAR{' '}
-          </button>
-          <button className='bg-gray-200 rounded-full p-[0.5625rem] ml-[-3px]'>
-            <GoArrowUpRight
-              size={24}
-              className='text-gray-950'
-            />{' '}
-          </button>
+          <LetsTalkButton />
         </div>
       )}
     </section>
