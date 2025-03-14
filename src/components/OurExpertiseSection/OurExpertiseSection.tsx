@@ -60,7 +60,7 @@ export default function OurExpertiseSection({ id }: OurExpertiseProps) {
         </p>
       </div>
 
-      <div className='flex justify-between gap-4 w-full items-stretch'>
+      <div className='flex justify-between gap-4 w-full items-stretch text-center'>
         {cards.map((card, index) => (
           <Card
             key={index}
