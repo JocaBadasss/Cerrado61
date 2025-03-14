@@ -53,28 +53,20 @@ export default function HeroVideo({ id }: HeroVideoProps) {
   return (
     <section
       id={id}
-      className='relative  mt-7 rounded-2xl h-[calc(100vh-3.5rem)] overflow-hidden  '
+      className='relative h-[90dvh]  mt-7 rounded-2xl lg:h-[calc(100vh-3.5rem)] overflow-hidden  '
     >
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
-        className=' w-full  object-cover  rounded-2xl h-[calc(100vh-3.5rem)] '
+        className=' w-full h-[90dvh] object-cover  rounded-2xl lg:h-[calc(100vh-3.5rem)] '
         onEnded={(e) => e.currentTarget.play()}
       >
         <source
           src='/video.webm'
           type='video/webm'
         />
-        {/* <source
-          src='/video.ogv'
-          type='video/ogg'
-        />
-        <source
-          src='/video.mp4'
-          type='video/mp4'
-        /> */}
         Seu navegador não suporta a tag de vídeo.
       </video>
       <div className='absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-2xl'></div>

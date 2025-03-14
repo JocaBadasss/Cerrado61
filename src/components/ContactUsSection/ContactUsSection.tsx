@@ -10,12 +10,12 @@ export default function ContactUsSection({ id }: ContactUsSectionProps) {
       className='flex flex-col gap-11 font-poppins bg-zinc-800 rounded-t-3xl p-9'
       id={id}
     >
-      <div className='wrapper flex w-full justify-between'>
+      <div className='wrapper flex flex-col lg:flex-row w-full justify-between'>
         <div className='text-wrapper flex flex-col gap-8'>
           <h1 className='text-sm text-left font-robotoMono'>
             <span className='block mb-1 '> &#40;03&#41; </span> Nos contate
           </h1>
-          <div className='text-5xl text-left w-4/6  text-zinc-400'>
+          <div className='lg:text-5xl text-left w-4/6  text-zinc-400'>
             <p className='inline'>
               Nos
               <span className='font-bold text-white'> fale</span> qual é a sua

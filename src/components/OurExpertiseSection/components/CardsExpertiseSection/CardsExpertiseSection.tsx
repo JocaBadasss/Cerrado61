@@ -10,7 +10,7 @@ interface CardProps {
 export function Card({ iconSrc, title, description, index }: CardProps) {
   return (
     <motion.div
-      className='w-1/3 border border-zinc-600 bg-gray-200 rounded-lg p-6 flex flex-col items-center gap-4'
+      className='lg:w-1/3 w-full border border-zinc-600 bg-gray-200 rounded-lg p-6 flex flex-col items-center gap-4'
       initial={{ opacity: 0, y: 100 }} // Começa fora da tela, como no slideInBottom
       whileInView={{ opacity: 1, y: 0 }} // Fica visível e sobe
       transition={{

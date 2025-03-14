@@ -44,7 +44,7 @@ export default function Header() {
     //   }`}
     // >
     <header
-      className={`fixed w-screen z-[999]  px-10 justify-between left-[0.01rem] lg:px-12 rounded-full  lg:left-4 flex lg:justify-between items-center transition-all duration-500 font-poppins lg:w-[calc(100%-2rem)] ${
+      className={`fixed w-screen z-[999]  px-12 justify-between left-[0.01rem] lg:px-12 rounded-full  lg:left-4 flex lg:justify-between items-center transition-all duration-500 font-poppins lg:w-[calc(100%-2rem)] ${
         isScrolling
           ? 'h-14 lg:h-20 bg-white bg-opacity-10 transform translate-y-6 backdrop-blur-3xl'
           : 'h-28 lg:h-40 transform translate-y-0'

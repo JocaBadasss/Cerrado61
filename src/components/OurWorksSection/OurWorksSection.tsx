@@ -46,23 +46,23 @@ export default function OurWorksSection({ id }: OurWorksProps) {
       className='flex flex-col gap-11 font-robotoMono bg-zinc-800 rounded-3xl p-9'
       id={id}
     >
-      <div className='wrapper flex w-full justify-between'>
+      <div className='wrapper flex flex-col lg:flex-row w-full justify-between'>
         <div className='text-wrapper flex flex-col gap-8'>
-          <h1 className='text-sm text-left'>
+          <h1 className='text-xs lg:text-sm text-left'>
             <span className='block mb-1'> &#40;02&#41; </span> Nossos Trabalhos
           </h1>
-          <p className='text-3xl text-left w-[30rem] font-poppins'>
+          <p className='text-lg lg:text-3xl text-left lg:w-[30rem] font-poppins'>
             Projetos que inspiram e resultados que falam por si. Conheça nosso
             portfólio e veja como transformamos ideias em realidade.
           </p>
         </div>
-        <p className='text-sm text-right w-[20rem] self-center'>
+        <p className='text-xs lg:text-sm text-right lg:w-[20rem] self-center'>
           Explore nossos trabalhos realizados e descubra como combinamos
           criatividade, técnica e paixão em cada projeto.
         </p>
       </div>
 
-      <div className='flex gap-4 w-full h-[30rem]'>
+      <div className='flex flex-col lg:flex-row gap-4 w-full lg:h-[30rem]'>
         {/* Videos Institucionais */}
         <Card
           active={activeCard === 1 || activeCard === null}

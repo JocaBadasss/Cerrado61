@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className='  gap-11 font-poppins bg-zinc-800 rounded-b-3xl p-9 flex justify-between items-center  '>
+    <footer className='  gap-11 font-poppins bg-zinc-800 rounded-b-3xl p-9 lg:flex   justify-between items-center  '>
       <div
         role='banner'
         className='flex flex-row gap-5 items-center rounded'
@@ -27,9 +27,9 @@ export default function Footer() {
       <nav
         role='navigation'
         // className='text-white  rounded-3xl relative '
-        className={`text-white transition-all duration-1000  rounded-3xl relative text-zinc-400  `}
+        className={` transition-all duration-1000  rounded-3xl relative text-zinc-400  `}
       >
-        <ul className='flex flex-row gap-7 text-sm relative p-3 font-poppins'>
+        <ul className='flex flex-col lg:flex-row gap-7 text-sm relative p-3 font-poppins'>
           <li className={`flex items-center relative  `}>
             <a href='#our-expertise'>Serviços</a>
           </li>
