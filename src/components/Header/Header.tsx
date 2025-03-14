@@ -1,6 +1,6 @@
 'use client';
 
-import { FaInstagram, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 
 export default function Header() {
@@ -103,7 +103,7 @@ export default function Header() {
       <nav
         role='navigation'
         // className='text-white  rounded-3xl relative '
-        className={`hidden lg:text-white transition-all duration-1000  rounded-3xl relative  `}
+        className={`hidden lg:block lg:text-white transition-all duration-1000  rounded-3xl relative  `}
       >
         <ul className='flex flex-row gap-7 text-sm relative p-3 font-poppins'>
           <li className={`flex items-center `}>

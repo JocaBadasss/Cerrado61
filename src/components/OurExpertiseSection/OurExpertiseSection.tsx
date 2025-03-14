@@ -21,10 +21,16 @@ export default function OurExpertiseSection({ id }: OurExpertiseProps) {
       iconSrc: '/card2.0.svg',
     },
     {
-      title: 'Ensaios Fotográficos',
+      title: 'Fotografias Profissionais',
       description:
-        'Ensaios profissionais para capturar momentos únicos, destacando personalidades e criando memórias inesquecíveis.',
+        'Fotografias profissionais que valorizam detalhes, destacam qualidades e comunicam com clareza a essência de pessoas, marcas ou produtos.',
       iconSrc: '/card3.0.svg',
+    },
+    {
+      title: 'Mídias Digitais',
+      description:
+        'Criação de conteúdos digitais estratégicos, planejados para engajar, comunicar e fortalecer sua presença online.',
+      iconSrc: '/card4.0.svg',
     },
   ];
 
@@ -61,7 +67,7 @@ export default function OurExpertiseSection({ id }: OurExpertiseProps) {
             title={card.title}
             description={card.description}
             iconSrc={card.iconSrc}
-            index={index} 
+            index={index}
           />
         ))}
       </div>
