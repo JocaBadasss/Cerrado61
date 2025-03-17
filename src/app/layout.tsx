@@ -1,24 +1,7 @@
-// import { Poppins, Roboto_Mono, Roboto } from 'next/font/google';
+
 import type { Metadata } from 'next';
 
-// const poppins = Poppins({
-//   subsets: ['latin'],
-//   display: 'swap',
-//   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-//   variable: '--font-poppins',
-// });
 
-// const robotoMono = Roboto_Mono({
-//   subsets: ['latin'],
-//   weight: ['100', '200', '300', '400', '500', '600', '700'],
-//   variable: '--font-roboto-mono',
-// });
-
-// const roboto = Roboto({
-//   subsets: ['latin'],
-//   weight: ['100', '300', '400', '500', '700', '900'],
-//   variable: '--font-roboto',
-// });
 
 import './globals.css';
 
@@ -36,7 +19,7 @@ export default function RootLayout({
   return (
     <html
       lang='pt-BR'
-      // className={`${robotoMono.variable} ${poppins.variable} ${roboto.variable}`}
+
     >
       <head>
         <link

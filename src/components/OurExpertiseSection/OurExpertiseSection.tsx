@@ -39,7 +39,7 @@ export default function OurExpertiseSection({ id }: OurExpertiseProps) {
       id={id}
       className='flex flex-col gap-11 font-poppins pt-9'
     >
-      <div className='wrapper flex flex-col lg:flex-row  w-full justify-between'>
+      <div className='wrapper flex flex-col lg:flex-row gap-3 lg:gap-0 w-full justify-between'>
         <div className='text-wrapper flex flex-col gap-8'>
           <h1 className='text-xs lg:text-sm text-left font-robotoMono'>
             <span className='block mb-1 text-zinc-400'> &#40;01&#41; </span>

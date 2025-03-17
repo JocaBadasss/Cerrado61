@@ -51,9 +51,7 @@ export default function Card({
       <div className='opacity-0 lg:opacity-100 tags flex w-full justify-end'>
         <div
           className={`flex gap-2 w-72 flex-wrap justify-end transition-opacity duration-1000 ease-in-out ${
-            active
-              ? 'lg:opacity-100 lg:translate-y-0'
-              : 'lg:opacity-0 lg:translate-y-5'
+            active ? 'lg:opacity-100 lg:translate-y-0' : 'lg:opacity-0 lg:translate-y-5'
           }`}
         >
           {tags.map((tag, index) => (
@@ -70,27 +68,15 @@ export default function Card({
         <h1 className=' text-xl lg:text-2xl  font-poppins font-medium'>
           {title}
         </h1>
-        {/* Subtítulo desktop */}
         <p
-          className={`hidden lg:block transition-all duration-500 ease-in-out overflow-hidden font-roboto ${
+          className={`transition-all duration-500 ease-in-out overflow-hidden font-roboto ${
             isVisible
               ? 'max-h-[100px] text-xs lg:text-sm opacity-100'
-              : 'lg:max-h-0 lg:text-[2px] lg:opacity-0'
+              : 'max-h-0 text-[2px] opacity-0'
           }`}
           style={{
             lineHeight: isVisible ? '1.5rem' : '0',
             padding: isVisible ? '0.5rem 0' : '0',
-          }}
-        >
-          {subtitle}
-        </p>
-
-        {/* Subtítulo mobile */}
-        <p
-          className={`block lg:hidden transition-all duration-500 ease-in-out overflow-hidden font-roboto max-h-[100px] text-xs lg:text-sm opacity-100 `}
-          style={{
-            lineHeight: isVisible ? '1.5rem' : '1.5rem',
-            padding: isVisible ? '0.5rem 0' : '0.5rem 0',
           }}
         >
           {subtitle}

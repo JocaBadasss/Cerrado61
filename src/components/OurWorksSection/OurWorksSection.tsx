@@ -12,33 +12,39 @@ export default function OurWorksSection({ id }: OurWorksProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true); // Evita que a animação aconteça mais de uma vez
+ useEffect(() => {
+   // Verifica se a largura da tela é maior que 1024px (lg: no Tailwind)
+   const isDesktop = window.innerWidth >= 1024;
 
-            // Sequência automática dos cards
-            setTimeout(() => setActiveCard(2), 800); // Primeiro ativa o card 2
-            setTimeout(() => setActiveCard(3), 1600); // Depois ativa o card 3
-            setTimeout(() => setActiveCard(1), 2400); // Volta para o card 1 e usuário assume o controle
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+   if (!isDesktop) return; // Se for mobile, não faz a animação
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+   const observer = new IntersectionObserver(
+     (entries) => {
+       entries.forEach((entry) => {
+         if (entry.isIntersecting && !hasAnimated) {
+           setHasAnimated(true); // Evita que a animação aconteça mais de uma vez
 
-    return () => observer.disconnect();
-  }, [hasAnimated]);
+           // Sequência automática dos cards
+           setTimeout(() => setActiveCard(2), 800); // Primeiro ativa o card 2
+           setTimeout(() => setActiveCard(3), 1600); // Depois ativa o card 3
+           setTimeout(() => setActiveCard(1), 2400); // Volta para o card 1 e o usuário assume o controle
+         }
+       });
+     },
+     { threshold: 0.5 }
+   );
 
-  const handleMouseEnter = (index: number) => {
-    setActiveCard(index);
-  };
+   if (sectionRef.current) {
+     observer.observe(sectionRef.current);
+   }
+
+   return () => observer.disconnect();
+ }, [hasAnimated]);
+
+ const handleMouseEnter = (index: number) => {
+   setActiveCard(index);
+ };
+
 
   return (
     <section
@@ -46,7 +52,7 @@ export default function OurWorksSection({ id }: OurWorksProps) {
       className='flex flex-col gap-11 font-robotoMono bg-zinc-800 rounded-3xl p-9'
       id={id}
     >
-      <div className='wrapper flex flex-col lg:flex-row w-full justify-between'>
+      <div className='wrapper flex flex-col lg:flex-row w-full gap-3 lg:gap-0 justify-between'>
         <div className='text-wrapper flex flex-col gap-8'>
           <h1 className='text-xs lg:text-sm text-left'>
             <span className='block mb-1'> &#40;02&#41; </span> Nossos Trabalhos
@@ -56,7 +62,7 @@ export default function OurWorksSection({ id }: OurWorksProps) {
             portfólio e veja como transformamos ideias em realidade.
           </p>
         </div>
-        <p className='text-xs lg:text-sm text-right lg:w-[20rem] self-center'>
+        <p className='text-xs lg:text-sm text-right lg:w-[20rem] self-center text-zinc-400'>
           Explore nossos trabalhos realizados e descubra como combinamos
           criatividade, técnica e paixão em cada projeto.
         </p>

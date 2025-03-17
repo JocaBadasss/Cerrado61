@@ -38,7 +38,7 @@ export default function Card({
     <div
       role='card'
       className={`${
-        active ? 'lg:flex-[2]' : 'lg:flex-1'
+        active ? 'flex-[2]' : 'flex-1'
       } bg-gray-500 rounded-lg overflow-hidden transition-all duration-1000 ease-in-out p-6 flex flex-col justify-between hover:cursor-pointer`}
       onMouseEnter={onMouseEnter}
       style={{
@@ -51,9 +51,7 @@ export default function Card({
       <div className='opacity-0 lg:opacity-100 tags flex w-full justify-end'>
         <div
           className={`flex gap-2 w-72 flex-wrap justify-end transition-opacity duration-1000 ease-in-out ${
-            active
-              ? 'lg:opacity-100 lg:translate-y-0'
-              : 'lg:opacity-0 lg:translate-y-5'
+            active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
           {tags.map((tag, index) => (
@@ -70,27 +68,15 @@ export default function Card({
         <h1 className=' text-xl lg:text-2xl  font-poppins font-medium'>
           {title}
         </h1>
-        {/* Subtítulo desktop */}
         <p
-          className={`hidden lg:block transition-all duration-500 ease-in-out overflow-hidden font-roboto ${
+          className={`transition-all duration-500 ease-in-out overflow-hidden font-roboto ${
             isVisible
               ? 'max-h-[100px] text-xs lg:text-sm opacity-100'
-              : 'lg:max-h-0 lg:text-[2px] lg:opacity-0'
+              : 'max-h-0 text-[2px] opacity-0'
           }`}
           style={{
             lineHeight: isVisible ? '1.5rem' : '0',
             padding: isVisible ? '0.5rem 0' : '0',
-          }}
-        >
-          {subtitle}
-        </p>
-
-        {/* Subtítulo mobile */}
-        <p
-          className={`block lg:hidden transition-all duration-500 ease-in-out overflow-hidden font-roboto max-h-[100px] text-xs lg:text-sm opacity-100 `}
-          style={{
-            lineHeight: isVisible ? '1.5rem' : '1.5rem',
-            padding: isVisible ? '0.5rem 0' : '0.5rem 0',
           }}
         >
           {subtitle}
