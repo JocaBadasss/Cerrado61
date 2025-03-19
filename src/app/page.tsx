@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 // import FeedBackSection from '../components/FeedBackSection/FeedBackSection';
 import ContactUsSection from '@/components/ContactUsSection/ContactUsSection';
 import Footer from '@/components/Footer/Footer';
+import AboutUsSection from '@/components/AboutUsSection/AboutUs';
 
 export default function Home() {
   useEffect(() => {
@@ -50,6 +51,7 @@ export default function Home() {
         <OurExpertise id='our-expertise' />
         <OurWorksSection id='our-works' />
         {/* <FeedBackSection id='feedbacks' /> */}
+        <AboutUsSection id='about-us' />
         <ContactUsSection id='contact-us' />
       </main>
 

@@ -12,30 +12,20 @@ export default function HeroVideo({ id }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVibrating, setIsVibrating] = useState(false);
   const [hasAppeared, setHasAppeared] = useState(false);
-  const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
-    // Detectar se o usuário está no iPhone/iPad
-    const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
-    setIsIOS(/iPad|iPhone|iPod/.test(userAgent));
-
     const video = videoRef.current;
-    if (video) {
-      video.muted = true; // Garante que o autoplay funcione no iOS
-      video.setAttribute('playsinline', 'true'); // Evita que o iPhone tente abrir o vídeo em tela cheia
 
-      // Tenta iniciar o vídeo manualmente
-      const playVideo = async () => {
-        try {
-          await video.play();
-        } catch (error) {
-          console.warn(
-            'Autoplay bloqueado no iOS, aguardando interação do usuário.'
-          );
+    if (video) {
+      const checkVideoEnded = () => {
+        if (video.ended) {
+          video.play();
         }
       };
 
-      playVideo();
+      const intervalId = setInterval(checkVideoEnded, 500); // Verifica a cada 500ms
+
+      return () => clearInterval(intervalId);
     }
   }, []);
 
@@ -62,17 +52,15 @@ export default function HeroVideo({ id }: HeroVideoProps) {
   return (
     <section
       id={id}
-      className='relative h-[90dvh] mt-7 rounded-2xl lg:h-[calc(100vh-3.5rem)] overflow-hidden'
+      className='relative h-[90dvh]  mt-7 rounded-2xl lg:h-[calc(100vh-3.5rem)] overflow-hidden  '
     >
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
-        playsInline
-        className='w-full h-[90dvh] object-cover rounded-2xl lg:h-[calc(100vh-3.5rem)]'
+        className=' w-full h-[90dvh] object-cover  rounded-2xl lg:h-[calc(100vh-3.5rem)] '
         onEnded={(e) => e.currentTarget.play()}
-        controls={isIOS} // Apenas iOS verá os controles
       >
         <source
           src='/video.webm'
@@ -80,10 +68,18 @@ export default function HeroVideo({ id }: HeroVideoProps) {
         />
         Seu navegador não suporta a tag de vídeo.
       </video>
-
       <div className='absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-2xl pointer-events-none'></div>
 
       {showButton && (
+        // <button
+        //   className={`absolute bottom-[10%] left-[5%] bg-zinc-500 bg-opacity-50 text-white py-2 px-4 rounded-3xl shadow-lg font-semibold border-[1px] border-white  transition-opacity  text-[12px] ${
+        //     hasAppeared ? 'animate-slide-up-fade' : ''
+        //   } ${isVibrating ? 'animate-vibrate' : ''}`}
+        //   onAnimationEnd={() => setHasAppeared(false)}
+        // >
+        //   Fala com a gente!
+        // </button>
+
         <div
           className={`absolute bottom-[10%] left-[5%] flex items-center transition-opacity ${
             hasAppeared ? 'animate-slide-up-fade' : ''

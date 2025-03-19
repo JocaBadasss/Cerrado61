@@ -121,7 +121,7 @@ export default function Header() {
           </li>
 
           <li className="flex items-center relative before:content-[''] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white">
-            <a href='#contact-us'>Contato</a>
+            <a href='./Contato'>Contato</a>
           </li>
           {/* <li className='bg-orange-600 bg-opacity-50 h-fit absolute right-0 l top-0 rounded-r-3xl p-3 '>
             <a href='#'>Contato</a>
@@ -159,7 +159,7 @@ export default function Header() {
             </li>
             <li>
               <a
-                href='#contact-us'
+                href='/Contato'
                 onClick={toggleMenu}
               >
                 Contato
