@@ -48,7 +48,7 @@ export default function Card({
       }}
     >
       {/* Tags */}
-      <div className='opacity-0 lg:opacity-100 tags flex w-full justify-end'>
+      <div className='opacity-0 lg:opacity-100 tags flex w-full justify-end '>
         <div
           className={`flex gap-2 w-72 flex-wrap justify-end transition-opacity duration-1000 ease-in-out ${
             active
@@ -72,7 +72,7 @@ export default function Card({
         </h1>
         {/* Subtítulo desktop */}
         <p
-          className={`hidden lg:block transition-all duration-500 ease-in-out overflow-hidden font-roboto ${
+          className={`hidden lg:block transition-all duration-500 ease-in-out overflow-hidden font-roboto  ${
             isVisible
               ? 'max-h-[100px] text-xs lg:text-sm opacity-100'
               : 'lg:max-h-0 lg:text-[2px] lg:opacity-0'

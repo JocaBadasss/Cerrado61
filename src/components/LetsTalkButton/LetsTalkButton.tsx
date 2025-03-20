@@ -1,11 +1,9 @@
+import Link from 'next/link';
 import { GoArrowUpRight } from 'react-icons/go';
 
 export default function LetsTalkButton() {
   return (
-    <a
-      href='https://whatsa.me/5561999380906/?t=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o.'
-      target='_blank'
-    >
+    <Link href='./contato'>
       <div
         className={` justify-center items-center text-xs lg:text-base inline-flex align-middle`}
       >
@@ -21,7 +19,7 @@ export default function LetsTalkButton() {
           />{' '}
         </button>
       </div>
-    </a>
+    </Link>
   );
 }
 

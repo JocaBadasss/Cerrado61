@@ -44,7 +44,7 @@ export default function Footer() {
           </li>
 
           <li className='flex items-center relative hover:text-white'>
-            <a href='#'>Contato</a>
+            <a href='./contato'>Contato</a>
           </li>
           <li className='flex items-center relative hover:text-white'>
             <a href='#'>Termos e condições</a>
