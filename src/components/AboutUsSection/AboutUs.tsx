@@ -1,6 +1,6 @@
-'use client';
+// 'use client';
 
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Card } from './components/CardsAboutUsSection/CardsAboutUsSection';
 
 interface AboutUsSectionProps {
@@ -8,18 +8,18 @@ interface AboutUsSectionProps {
 }
 
 export default function AboutUsSection({ id }: AboutUsSectionProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  // const [isExpanded, setIsExpanded] = useState(false);
 
-  const toggleText = () => {
-    setIsExpanded(!isExpanded);
-  };
+  // const toggleText = () => {
+  //   setIsExpanded(!isExpanded);
+  // };
 
   const cards = [
     {
       title: 'Missão',
       description:
         'Criar conteúdos significativos. Captamos mais que momentos, eternizamos emoções e sentimentos  de forma criativa e autêntica.',
-      iconSrc: '/card1.0.svg',
+      iconSrc: '/card5.0.svg',
     },
     {
       title: 'Visão',
@@ -31,7 +31,7 @@ export default function AboutUsSection({ id }: AboutUsSectionProps) {
       title: 'Valores',
       description:
         'Autenticidade, Comprometimento, Humanidade, Parceria e Inspiração.',
-      iconSrc: '/card3.0.svg',
+      iconSrc: '/card8.0.svg',
     },
   ];
 
@@ -46,7 +46,7 @@ export default function AboutUsSection({ id }: AboutUsSectionProps) {
             <span className='block mb-1 text-zinc-400'> &#40;03&#41; </span>
             Sobre nós
           </h1>
-          <div className='text-lg lg:text-2xl text-left text-zinc-400'>
+          <div className='text-lg lg:text-2xl text-left text-zinc-200'>
             <h2 className='w-full text-3xl'>
               <span className='font-bold text-white'>Criamos</span> conexões
               visuais que contam{' '}
@@ -59,19 +59,6 @@ export default function AboutUsSection({ id }: AboutUsSectionProps) {
             profissionalismo. Somos uma produtora audiovisual que transforma
             ideias em conteúdos digitais de alto impacto, combinando
             criatividade, técnica e um olhar atento aos detalhes.
-            {!isExpanded && (
-              <>
-                <span className='font-bold text-white'>...</span>
-                <button
-                  onClick={toggleText}
-                  className='ml-2 text-white bg-zinc-600 hover:bg-zinc-500 transition-all px-3 py-1 text-xs rounded-full'
-                >
-                  Ver mais
-                </button>
-              </>
-            )}
-            {isExpanded && (
-              <>
                 <br />
                 <br />
                 Atendemos desde grandes empresas até micro e pequenos negócios,
@@ -99,7 +86,7 @@ export default function AboutUsSection({ id }: AboutUsSectionProps) {
                   </div>
 
                   {/* Card alinhado à direita */}
-                  <div className='flex justify-center'>
+                  <div className='flex justify-start'>
                     <Card
                       key={cards[1].title}
                       title={cards[1].title}
@@ -110,7 +97,7 @@ export default function AboutUsSection({ id }: AboutUsSectionProps) {
                   </div>
 
                   {/* Card alinhado à esquerda novamente */}
-                  <div className='flex justify-start'>
+                  <div className='flex justify-center'>
                     <Card
                       key={cards[2].title}
                       title={cards[2].title}
@@ -124,14 +111,6 @@ export default function AboutUsSection({ id }: AboutUsSectionProps) {
                 <span className='font-bold text-white'>
                   Vamos criar juntos?
                 </span>
-                <button
-                  onClick={toggleText}
-                  className='ml-2 text-white bg-zinc-600 hover:bg-zinc-500 transition-all px-3 py-1 text-xs rounded-full'
-                >
-                  Ver menos
-                </button>
-              </>
-            )}
           </div>
         </div>
       </div>

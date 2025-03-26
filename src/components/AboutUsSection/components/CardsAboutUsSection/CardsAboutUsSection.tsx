@@ -37,7 +37,7 @@ export function Card({
 
       <div className='flex items-center flex-col gap-2'>
         <h3 className='text-xl font-bold text-gray-800'>{title}</h3>
-        <p className='text-sm text-zinc-700 text-center font-roboto min-h-[3.75rem]'>
+        <p className='text-sm text-zinc-700 text-center font-roboto min-h-[3.75rem] lg:min-h-min'>
           {description}
         </p>
       </div>

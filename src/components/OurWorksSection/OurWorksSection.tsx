@@ -12,39 +12,38 @@ export default function OurWorksSection({ id }: OurWorksProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
- useEffect(() => {
-   // Verifica se a largura da tela é maior que 1024px (lg: no Tailwind)
-   const isDesktop = window.innerWidth >= 1024;
+  useEffect(() => {
+    // Verifica se a largura da tela é maior que 1024px (lg: no Tailwind)
+    const isDesktop = window.innerWidth >= 1024;
 
-   if (!isDesktop) return; // Se for mobile, não faz a animação
+    if (!isDesktop) return; // Se for mobile, não faz a animação
 
-   const observer = new IntersectionObserver(
-     (entries) => {
-       entries.forEach((entry) => {
-         if (entry.isIntersecting && !hasAnimated) {
-           setHasAnimated(true); // Evita que a animação aconteça mais de uma vez
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true); // Evita que a animação aconteça mais de uma vez
 
-           // Sequência automática dos cards
-           setTimeout(() => setActiveCard(2), 800); // Primeiro ativa o card 2
-           setTimeout(() => setActiveCard(3), 1600); // Depois ativa o card 3
-           setTimeout(() => setActiveCard(1), 2400); // Volta para o card 1 e o usuário assume o controle
-         }
-       });
-     },
-     { threshold: 0.5 }
-   );
+            // Sequência automática dos cards
+            setTimeout(() => setActiveCard(2), 800); // Primeiro ativa o card 2
+            setTimeout(() => setActiveCard(3), 1600); // Depois ativa o card 3
+            setTimeout(() => setActiveCard(1), 2400); // Volta para o card 1 e o usuário assume o controle
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-   if (sectionRef.current) {
-     observer.observe(sectionRef.current);
-   }
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
-   return () => observer.disconnect();
- }, [hasAnimated]);
+    return () => observer.disconnect();
+  }, [hasAnimated]);
 
- const handleMouseEnter = (index: number) => {
-   setActiveCard(index);
- };
-
+  const handleMouseEnter = (index: number) => {
+    setActiveCard(index);
+  };
 
   return (
     <section
@@ -95,11 +94,11 @@ export default function OurWorksSection({ id }: OurWorksProps) {
         <Card
           active={activeCard === 3}
           onMouseEnter={() => handleMouseEnter(3)}
-          imageSrc='/work3.jpg'
+          imageSrc='/work5.png'
           positionBackground='center'
-          tags={['Aniversários', 'Influencer', 'Casamento', 'Religião']}
-          title='Ensaios Fotográficos'
-          subtitle='Capturamos momentos que contam histórias.'
+          tags={['Instagram', 'Reels', 'YouTube', 'Criação']}
+          title='Mídias Digitais'
+          subtitle='Ideias criativas que viram conteúdo e marcam presença nas redes.'
         />
       </div>
     </section>

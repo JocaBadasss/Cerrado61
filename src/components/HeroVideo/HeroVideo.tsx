@@ -75,8 +75,8 @@ export default function HeroVideo({ id }: HeroVideoProps) {
         controls={isIOS} // Apenas iOS verá os controles
       >
         <source
-          src='/video.webm'
-          type='video/webm'
+          src='/capa.mp4'
+          type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
         />
         Seu navegador não suporta a tag de vídeo.
       </video>

@@ -3,40 +3,49 @@
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface HeaderProps {
-  differentPage?: boolean; // Define qual header será exibido
+  differentPage?: boolean;
 }
 
 export default function Header({ differentPage = false }: HeaderProps) {
   const [isScrolling, setIsScrolling] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const handleScroll = () => {
-    setIsScrolling(window.scrollY > 0);
-  };
+  const handleScroll = () => setIsScrolling(window.scrollY > 0);
 
   useEffect(() => {
-    const body = document.body;
-    if (menuOpen) {
-      body.classList.add('menu-open');
-    } else {
-      body.classList.remove('menu-open');
-    }
-
-    return () => {
-      body.classList.remove('menu-open');
-    };
+    document.body.classList.toggle('menu-open', menuOpen);
+    return () => document.body.classList.remove('menu-open');
   }, [menuOpen]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.querySelector(id);
+    if (element) {
+      const headerOffset = 110;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
+
+  const handleAnchorClick = (id: string) => {
+    if (pathname === '/') {
+      scrollToSection(id);
+    } else {
+      window.location.href = '/' + id;
+    }
+  };
 
   return (
     <header
@@ -48,7 +57,7 @@ export default function Header({ differentPage = false }: HeaderProps) {
           : 'h-28 lg:h-40 transform translate-y-0'
       }`}
     >
-      {/* Menu Hambúrguer - Mobile */}
+      {/* Menu Mobile */}
       <button
         className='lg:hidden z-[9999] w-[1.62rem] h-[1.125rem] flex flex-col justify-around items-center'
         onClick={toggleMenu}
@@ -78,86 +87,91 @@ export default function Header({ differentPage = false }: HeaderProps) {
         >
           <img
             src='/logo.svg'
-            alt='Logotipo Cerrado61: lagartixa preta curvada com ponto laranja'
+            alt='Logotipo Cerrado61'
             className='w-8 lg:w-12'
           />
           <div className='flex flex-col items-center'>
-            <h1
-              role='heading'
-              className='font-Heading text-xl lg:text-3xl text-white inline-block'
-            >
-              Cerrado<span className='font-Numbers text-Cerrado_100'>61</span>
+            <h1 className='font-logo1 text-xl lg:text-3xl text-white inline-block'>
+              Cerrado<span className='font-logo2 text-Cerrado_100'>61</span>
             </h1>
-            <h2 className='font-Texting text-xs lg:text-base text-Cerrado_100 -mt-[0.70rem] lg:-mt-[0.90rem]'>
-              AUDIOVISUAL
+            <h2 className='font-logo2 text-xs lg:text-base text-Cerrado_100 -mt-[0.70rem] '>
+              PRODUTORA
             </h2>
           </div>
         </div>
       </Link>
 
-      {/* Menu Navegação - Desktop */}
+      {/* Menu Desktop */}
       <nav
         role='navigation'
-        className={`hidden lg:block lg:text-white transition-all duration-1000 rounded-3xl relative`}
+        className='hidden lg:block lg:text-white transition-all duration-1000 rounded-3xl relative'
       >
         <ul className='flex flex-row gap-7 text-sm relative p-3 font-poppins'>
           <li className='flex items-center'>
-            <a href='#hero-video'>Home</a>
+            <button onClick={() => handleAnchorClick('#hero-video')}>
+              Home
+            </button>
           </li>
-          <li className="flex items-center relative before:content-[''] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white">
-            <a href='#our-expertise'>Serviços</a>
+          <li className='flex items-center relative before:content-[""] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white'>
+            <button onClick={() => handleAnchorClick('#our-expertise')}>
+              Serviços
+            </button>
           </li>
-          <li className="flex items-center relative before:content-[''] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white">
-            <a href='./portfolio'>Portfólio</a>
+          <li className='flex items-center relative before:content-[""] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white'>
+            <Link href='/portfolio'>Portfólio</Link>
           </li>
-          <li className="flex items-center relative before:content-[''] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white">
-            <a href='./contato'>Contato</a>
+          <li className='flex items-center relative before:content-[""] before:absolute before:-left-4 before:h-5/6 before:w-[1px] before:bg-white'>
+            <Link href='/contato'>Contato</Link>
           </li>
         </ul>
       </nav>
 
-      {/* Menu Overlay - Mobile */}
+      {/* Menu Mobile Overlay */}
       {menuOpen && (
         <nav className='fixed top-0 left-0 h-screen w-screen bg-black bg-opacity-90 flex flex-col justify-center items-center text-white z-[999]'>
           <ul className='flex flex-col gap-6 text-xl font-poppins'>
             <li>
-              <a
-                href='#hero-video'
-                onClick={toggleMenu}
+              <button
+                onClick={() => {
+                  handleAnchorClick('#hero-video');
+                  toggleMenu();
+                }}
               >
                 Home
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href='#our-expertise'
-                onClick={toggleMenu}
+              <button
+                onClick={() => {
+                  handleAnchorClick('#our-expertise');
+                  toggleMenu();
+                }}
               >
                 Serviços
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href='./portfolio'
+              <Link
+                href='/portfolio'
                 onClick={toggleMenu}
               >
                 Portfólio
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='./contato'
+              <Link
+                href='/contato'
                 onClick={toggleMenu}
               >
                 Contato
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
       )}
 
-      {/* Ícones de Redes Sociais */}
-      <div className='flex flex-row gap-1 lg:gap-5 lg:items-center lg:justify-end lg:w-[13.375rem]'>
+      {/* Redes Sociais */}
+      <div className='flex flex-row gap-2 lg:gap-5 lg:items-center lg:justify-end lg:w-[13.375rem]'>
         <a
           href='https://www.instagram.com/cerrado61produtora/'
           target='_blank'

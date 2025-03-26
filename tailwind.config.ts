@@ -15,6 +15,8 @@ const config: Config = {
         poppins: ['Poppins', 'sans-serif'], // Alterado para o nome da fonte do Google Fonts
         robotoMono: ['Roboto Mono', 'monospace'], // Alterado para o nome da fonte do Google Fonts
         roboto: ['Roboto', 'sans-serif'], // Alterado para o nome da fonte do Google Fonts
+        logo1: ['AvenirHeavy', 'sans-serif'],
+        logo2: ['Mukta Mahee', 'sans-serif'],
       },
       colors: {
         Cerrado_100: '#F0672D',

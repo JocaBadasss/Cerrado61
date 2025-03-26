@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import LetsTalkButton from '@/components/LetsTalkButton/LetsTalkButton';
@@ -47,7 +46,7 @@ export default function PortfolioPage() {
       <Header differentPage />
       <main className='w-full min-h-screen  text-white font-poppins'>
         {/* Hero Section */}
-        <section className='relative w-full h-[50vh] flex flex-col justify-center items-center text-center px-6 gap-8'>
+        <section className='relative w-full h-[50vh] lg:h-[40vh] flex flex-col justify-center items-center text-center px-6 gap-8'>
           <h1 className='text-xs lg:text-sm text-left font-robotoMono'>
             Nosso Portfolio
           </h1>
@@ -65,14 +64,14 @@ export default function PortfolioPage() {
         </section>
 
         {/* Filtros */}
-        <section className='w-full flex justify-center gap-6 my-8'>
+        <section className='w-full flex flex-wrap justify-center gap-2 sm:gap-4 px-4 my-8'>
           {['all', 'videos', 'eventos', 'ensaios', 'midias'].map((category) => (
             <button
               key={category}
-              className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+              className={`px-3 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm rounded-full transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-gray-200 text-gray-900'
-                  : 'bg-transparent shadow-lg border-[1px] text-white hover:bg-gray-400'
+                  : 'bg-transparent shadow-lg border text-white hover:bg-gray-400'
               }`}
               onClick={() => setActiveCategory(category)}
             >
@@ -86,25 +85,25 @@ export default function PortfolioPage() {
         {/* Portfolio Grid */}
         <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-8 pb-16'>
           {filteredItems.map((item, index) => (
-            <Link
+            <a
               key={index}
-              href={item.link}
+              href='https://cerrado61.myportfolio.com/'
+              target='_blank'
               className='group relative block'
             >
               <div className='w-full h-72 overflow-hidden rounded-lg relative'>
                 <Image
                   src={item.image}
                   alt={item.title}
-                  layout='fill'
-                  objectFit='cover'
-                  className='group-hover:scale-105 transition-transform duration-500 rounded-lg'
+                  fill
+                  priority={index === 0}
+                  className='object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg'
                 />
-                {/* Título sobre a imagem */}
-                <h2 className='absolute bottom-5 left-0 w-full  backdrop-blur-sm  text-white text-xl font-semibold  text-center rounded-3xl'>
+                <h2 className='absolute bottom-5 left-0 w-full backdrop-blur-sm text-white text-xl font-semibold text-center rounded-3xl'>
                   {item.title}
                 </h2>
               </div>
-            </Link>
+            </a>
           ))}
         </section>
 

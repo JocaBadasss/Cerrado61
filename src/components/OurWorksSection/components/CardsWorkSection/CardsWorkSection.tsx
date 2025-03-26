@@ -3,6 +3,7 @@ import { PiCaretRightBold } from 'react-icons/pi';
 import { useState, useEffect } from 'react';
 
 import Tag from '../../../Tag/Tag';
+import Link from 'next/link';
 
 interface CardProps {
   active: boolean;
@@ -48,7 +49,7 @@ export default function Card({
       }}
     >
       {/* Tags */}
-      <div className='opacity-0 lg:opacity-100 tags flex w-full justify-end '>
+      <div className='opacity-0  tags flex w-full justify-end '>
         <div
           className={`flex gap-2 w-72 flex-wrap justify-end transition-opacity duration-1000 ease-in-out ${
             active
@@ -96,15 +97,15 @@ export default function Card({
           {subtitle}
         </p>
 
-        <button
-          className={` text-sm lg:text-base text-left flex items-center justify-between border-1 border rounded-full py-1 px-3 lg:py-3 lg:px-5 font-medium transition-all duration-1000 ease-in-out ${
-            active
-              ? 'text-gray-950 bg-gray-200  '
-              : 'text-white bg-transparent  '
+        <a
+          href='https://cerrado61.myportfolio.com/'
+          target='_blank'
+          className={`text-sm lg:text-base text-left flex items-center justify-between border-1 border rounded-full py-1 px-3 lg:py-3 lg:px-5 font-medium transition-all duration-1000 ease-in-out ${
+            active ? 'text-gray-950 bg-gray-200' : 'text-white bg-transparent'
           }`}
         >
           MAIS DETALHES <PiCaretRightBold className='text-sm lg:text-2xl' />
-        </button>
+        </a>
       </div>
     </div>
   );

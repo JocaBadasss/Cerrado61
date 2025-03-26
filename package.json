@@ -16,6 +16,7 @@
     "autoprefixer": "^10.4.20",
     "framer-motion": "^12.5.0",
     "next": "^15.2.2",
+    "nodemailer": "^6.10.0",
     "postcss": "^8.4.49",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -25,6 +26,7 @@
     "typescript": "^5.7.2"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
     "@types/three": "^0.169.0",
     "eslint": "^8",
     "eslint-config-next": "15.0.1"
