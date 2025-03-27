@@ -91,10 +91,10 @@ export default function ContactPage() {
                 </p>
                 <p className='text-gray-800 hover:text-gray-400 text-sm'>
                   <a
-                    href='mailto:contato@cerrado61.com'
+                    href='mailto:adm@cerrado61.com'
                     target='_blank'
                   >
-                    contato@cerrado61.com
+                    adm@cerrado61.com
                   </a>
                 </p>
               </div>
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 <p className='text-gray-600 text-sm'>Seg-Sáb, das 8h às 18h.</p>
                 <p className='text-gray-800 text-sm'>
                   <a
-                    href='https://whatsa.me/5561999380906/?t=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o.'
+                    href='https://wa.me/61999380906'
                     className='hover:text-white'
                     target='_blank'
                   >
@@ -132,7 +132,7 @@ export default function ContactPage() {
 
               <div className='flex justify-center mt-4'>
                 <a
-                  href='https://whatsa.me/5561999380906/?t=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o.'
+                  href='https://wa.me/61999380906'
                   target='_blank'
                   className='flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-md transition text-xs'
                 >
@@ -149,7 +149,7 @@ export default function ContactPage() {
                   <FaInstagram className='text-2xl' />
                 </a>
                 <a
-                  href='https://whatsa.me/5561999380906/?t=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o.'
+                  href='https://wa.me/61999380906'
                   className='text-gray-600 hover:text-gray-900'
                 >
                   <FaWhatsapp className='text-2xl' />

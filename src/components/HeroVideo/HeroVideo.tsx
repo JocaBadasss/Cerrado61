@@ -13,28 +13,29 @@ export default function HeroVideo({ id }: HeroVideoProps) {
   const [isVibrating, setIsVibrating] = useState(false);
   const [hasAppeared, setHasAppeared] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Detectar se o usuário está no iPhone/iPad
+    // Detecta se é iOS
     const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
     setIsIOS(/iPad|iPhone|iPod/.test(userAgent));
 
+    // Detecta se é mobile (só na primeira renderização)
+    setIsMobile(window.innerWidth < 1024);
+  }, []);
+
+  useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.muted = true; // Garante que o autoplay funcione no iOS
-      video.setAttribute('playsinline', 'true'); // Evita que o iPhone tente abrir o vídeo em tela cheia
-
-      // Tenta iniciar o vídeo manualmente
+      video.muted = true;
+      video.setAttribute('playsinline', 'true');
       const playVideo = async () => {
         try {
           await video.play();
         } catch (error) {
-          console.warn(
-            'Autoplay bloqueado no iOS, aguardando interação do usuário.'
-          );
+          console.warn('Autoplay bloqueado.');
         }
       };
-
       playVideo();
     }
   }, []);
@@ -54,10 +55,11 @@ export default function HeroVideo({ id }: HeroVideoProps) {
         setIsVibrating(true);
         setTimeout(() => setIsVibrating(false), 300);
       }, 5000);
-
       return () => clearInterval(vibrateInterval);
     }
   }, [showButton]);
+
+  const videoSrc = isMobile ? '/capamobile.mp4' : '/capa.mp4';
 
   return (
     <section
@@ -65,6 +67,7 @@ export default function HeroVideo({ id }: HeroVideoProps) {
       className='relative h-[90dvh] mt-7 rounded-2xl lg:h-[calc(100vh-3.5rem)] overflow-hidden'
     >
       <video
+        key={videoSrc}
         ref={videoRef}
         autoPlay
         loop
@@ -72,10 +75,10 @@ export default function HeroVideo({ id }: HeroVideoProps) {
         playsInline
         className='w-full h-[90dvh] object-cover rounded-2xl lg:h-[calc(100vh-3.5rem)]'
         onEnded={(e) => e.currentTarget.play()}
-        controls={isIOS} // Apenas iOS verá os controles
+        controls={isIOS}
       >
         <source
-          src='/capa.mp4'
+          src={videoSrc}
           type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
         />
         Seu navegador não suporta a tag de vídeo.

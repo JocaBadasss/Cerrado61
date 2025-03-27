@@ -182,7 +182,7 @@ export default function Header({ differentPage = false }: HeaderProps) {
           />
         </a>
         <a
-          href='https://whatsa.me/5561999380906/?t=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o.'
+          href='https://wa.me/61999380906'
           target='_blank'
         >
           <FaWhatsapp
